@@ -1,4 +1,3 @@
-import TextField from "@material-ui/core/TextField"
 import React, { useEffect, useRef, useState } from "react"
 import io from "socket.io-client"
 import "./App.css"
@@ -50,30 +49,31 @@ function App() {
 	return (
 		<div className="card">
 			<div className="render-chat">
-				<h1>Chat Log</h1>
+				<h1 className="heading">Chat Log</h1>
 				<div className="chat-wrapper">
 					{renderChat()}
 				</div>
 			</div>
 			<form onSubmit={onMessageSubmit}>
-				<h1>Messenger</h1>
 				{!toggleNameField ? 
 					<div className="name-field">
-						<TextField name="name" onChange={(e) => onTextChange(e)} value={state.name} label="Name" />
+						<input type="text" name="name" onChange={(e) => onTextChange(e)} value={state.name} placeholder="Enter name" />
 					</div>
 					: null
 				}
-				<div>
-					<TextField
-						name="message"
-						onChange={(e) => onTextChange(e)}
-						value={state.message}
-						id="outlined-multiline-static"
-						variant="outlined"
-						label="Message"
-					/>
+				<div className="message-wrapper">
+					<div className="input-wrapper">
+						<input
+							type="text" 
+							className="message-box"
+							name="message"
+							onChange={(e) => onTextChange(e)}
+							value={state.message}
+							placeholder="Message"
+						/>
+					</div>
+					<button className="submit-button">Send</button>
 				</div>
-				<button>Send Message</button>
 			</form>
 		</div>
 	)

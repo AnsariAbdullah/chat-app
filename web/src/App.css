@@ -3,42 +3,56 @@
 	margin: 0;
 	padding: 0;
 }
-
 .card {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 30px;
-  min-height: 30rem; */
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
-form {
-  max-width: 350px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+.heading {
+	background: #007bff;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
 }
-
+.chat-wrapper {
+	padding: 5px 0;
+}
+.message-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .name-field {
   margin-bottom: 40px;
 }
-
-button {
-  margin-top: 20px;
-  padding: 10px;
-  background: transparent;
-  border-radius: 5px;
-}
-
 .render-chat {
-  /* max-width: 350px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75); */
+	height: 100%;
+  overflow: auto;
 }
-
 h3 {
   color: #2f72da;
 }
-
 span {
   color: black;
+}
+
+/* INPUT */
+.input-wrapper {
+	width: 100%;
+}
+
+/* message-box */
+input[type="text"]{
+	width: 100%;
+	padding: 10px;
+}
+
+/* BUTTON */
+.submit-button {
+	padding: 11px 27px;
+	background: #007bff;
+	border: none;
+	color: #fff;
+	font-size: 15px;
 }
